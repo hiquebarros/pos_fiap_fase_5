@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: obesidade-streamlit
+    runtime: python
+    plan: free
+    rootDir: streamlit
+    buildCommand: pip install -r requirements.txt
+    startCommand: sh start.sh
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.4"
+      # Sem API_URL o app carrega o modelo localmente (models/ versionado no repo).
+      # Para usar uma API Flask separada, defina API_URL com a URL pública dela.

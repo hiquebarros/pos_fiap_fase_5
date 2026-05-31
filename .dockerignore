@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.git/
+.gitignore
+*.md
+notebooks/
+entrega/
+SPEC.md
+IMPLEMENTATION_PLAN.md

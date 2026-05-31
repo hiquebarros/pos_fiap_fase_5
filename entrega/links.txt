@@ -1,0 +1,3 @@
+App Preditiva: (preencher após deploy no Streamlit Cloud)
+Dashboard Analítico: (preencher após deploy — mesma app, página Dashboard)
+Repositório GitHub: (preencher URL do repositório)
