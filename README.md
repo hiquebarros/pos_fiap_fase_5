@@ -73,10 +73,30 @@ cd api && MODEL_DIR=../models python app.py
 cd streamlit && API_URL=http://localhost:5000 streamlit run app.py
 ```
 
+## Deploy no Render
+
+O app Streamlit é **autossuficiente**: sem a variável `API_URL`, ele carrega o modelo
+diretamente de `models/` (versionado no repo). Não precisa subir a API Flask separada.
+
+### Opção A — Blueprint (recomendado)
+
+1. Suba o repositório no GitHub.
+2. No Render: **New → Blueprint** e aponte para o repo. Ele lê o `render.yaml` e cria o serviço.
+
+### Opção B — Web Service manual
+
+Em **New → Web Service**, com o repo conectado, preencha:
+
+| Campo | Valor |
+|---|---|
+| Language | `Python 3` |
+| Root Directory | `streamlit` |
+| Build Command | `pip install -r requirements.txt` |
+| Start Command | `sh start.sh` |
+
+O `start.sh` escuta na porta dinâmica `$PORT` exigida pelo Render. O dashboard fica em
+`/Dashboard` na mesma URL.
+
 ## Métricas
 
 Consulte `models/metrics.json` após o treinamento.
-
-## Entrega
-
-Preencher `entrega/links.txt` com links do Streamlit, dashboard e GitHub.
